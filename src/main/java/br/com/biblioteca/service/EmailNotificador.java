@@ -1,3 +1,5 @@
+package br.com.biblioteca.service;
+
 public class EmailNotificador implements Notificador {
 
     @Override

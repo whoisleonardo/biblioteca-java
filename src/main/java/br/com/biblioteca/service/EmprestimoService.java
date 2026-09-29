@@ -1,3 +1,8 @@
+package br.com.biblioteca.service;
+
+import br.com.biblioteca.model.Livro;
+import br.com.biblioteca.model.Pessoa;
+
 public class EmprestimoService {
 
     private Notificador notificador;

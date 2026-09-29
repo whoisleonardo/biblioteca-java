@@ -1,3 +1,15 @@
+package br.com.biblioteca;
+
+import br.com.biblioteca.model.Aluno;
+import br.com.biblioteca.model.Biblioteca;
+import br.com.biblioteca.model.Livro;
+import br.com.biblioteca.model.Pessoa;
+import br.com.biblioteca.model.Professor;
+import br.com.biblioteca.service.ConfigBiblioteca;
+import br.com.biblioteca.service.EmailNotificador;
+import br.com.biblioteca.service.EmprestimoService;
+import br.com.biblioteca.service.Notificador;
+
 public class Main {
 
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package br.com.biblioteca.model;
+
 public class Pessoa {
 
     private String nome;

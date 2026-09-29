@@ -1,3 +1,5 @@
+package br.com.biblioteca.model;
+
 public class Livro {
 
     private String titulo;

@@ -1,3 +1,5 @@
+package br.com.biblioteca.model;
+
 public class Aluno extends Pessoa {
 
     public Aluno(String nome) {
