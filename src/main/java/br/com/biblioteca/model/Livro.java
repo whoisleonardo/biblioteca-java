@@ -1,29 +1,54 @@
 package br.com.biblioteca.model;
 
-public class Livro {
+import br.com.biblioteca.model.estado.Disponivel;
+import br.com.biblioteca.model.estado.EstadoLivro;
 
-    private String titulo;
-    private boolean disponivel;
+public abstract class Livro {
 
-    public Livro(String titulo) {
+    private final String titulo;
+    private EstadoLivro estado;
+
+    protected Livro(String titulo) {
         this.titulo = titulo;
-        this.disponivel = true;
+        this.estado = new Disponivel();
     }
+
+    public abstract String getFormato();
 
     public String getTitulo() {
         return titulo;
     }
 
-    public boolean isDisponivel() {
-        return disponivel;
+    public EstadoLivro getEstado() {
+        return estado;
     }
 
-    public void setDisponivel(boolean disponivel) {
-        this.disponivel = disponivel;
+    public void emprestar() {
+        this.estado = estado.emprestar();
+    }
+
+    public void devolver() {
+        this.estado = estado.devolver();
+    }
+
+    public void reservar() {
+        this.estado = estado.reservar();
+    }
+
+    public void enviarParaManutencao() {
+        this.estado = estado.enviarParaManutencao();
+    }
+
+    public void concluirManutencao() {
+        this.estado = estado.concluirManutencao();
+    }
+
+    public boolean isDisponivel() {
+        return estado instanceof Disponivel;
     }
 
     @Override
     public String toString() {
-        return titulo + " - " + (disponivel ? "Disponível" : "Emprestado");
+        return String.format("%-24s %-10s %s", titulo, getFormato(), estado.getNome());
     }
 }

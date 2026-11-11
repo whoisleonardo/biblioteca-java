@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Biblioteca {
 
-    private String nome;
-    private List<Livro> livros;
+    private final String nome;
+    private final List<Livro> livros;
 
     public Biblioteca(String nome) {
         this.nome = nome;
@@ -19,19 +19,13 @@ public class Biblioteca {
 
     public void adicionarLivro(Livro livro) {
         livros.add(livro);
-        System.out.println("Livro \"" + livro.getTitulo() + "\" adicionado.");
     }
 
-    public void listarLivros() {
-        System.out.println("\n--- LIVROS DA BIBLIOTECA ---");
+    public int getTotalDeLivros() {
+        return livros.size();
+    }
 
-        if (livros.isEmpty()) {
-            System.out.println("Nenhum livro cadastrado.");
-            return;
-        }
-
-        for (Livro livro : livros) {
-            System.out.println(livro);
-        }
+    public List<Livro> getLivros() {
+        return List.copyOf(livros);
     }
 }
